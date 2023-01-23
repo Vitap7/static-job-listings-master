@@ -8,17 +8,15 @@ html,
 body,
 ul,
 h2,
-h3 {
+h3,
+p {
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-size: $base-font-size * 1.2;
+  font-size: $base-font-size;
   font-family: "League Spartan";
-}
-
-main {
   background-color: $light-grayish-cyan-bg;
 }
 
@@ -62,9 +60,11 @@ li {
   background-color: $white;
   margin-top: 1.5em;
   box-shadow: 0 0.3em 0.5em 0.2em $light-grayish-cyan-shadow;
+  border-radius: 0.25em;
+  padding: 1em 0;
   img {
     padding-left: 1.5em;
-    padding-right: 1em;
+    padding-right: 1.25em;
   }
   section {
     flex: 1;
@@ -72,7 +72,9 @@ li {
     justify-content: space-between;
   }
   .detail-info {
-    font-weight: $base-weight;
+    gap: 0.75em;
+    color: $dark-grayish-cyan;
+    font-weight: $base-weight * 1.15;
   }
 }
 
@@ -83,8 +85,41 @@ li {
     display: flex;
     align-items: center;
     gap: 0.75em;
+    p {
+      color: $white;
+      font-size: 0.9em;
+      span {
+        vertical-align: middle;
+        padding: 0.3em 0.5em;
+        border-radius: 1em;
+        margin-right: 0.5em;
+      }
+    }
+    .span-new {
+      background-color: $deep-dark-cyan;
+    }
+    .span-featured {
+      background-color: $black;
+    }
   }
   h3 {
     color: $desaturated-dark-cyan;
+  }
+  h2 {
+    font-size: 1.25em;
+    padding: 0.75em 0;
+  }
+}
+
+.job-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  p {
+    color: $deep-dark-cyan;
+    background-color: $light-grayish-cyan-bg;
+    font-weight: $bold-weight;
+    padding: 0.5em;
+    border-radius: 0.25em;
   }
 }
