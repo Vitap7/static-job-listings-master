@@ -194,4 +194,13 @@ li:hover {
 .filter .clear-button:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
 }/*# sourceMappingURL=index.css.map */
