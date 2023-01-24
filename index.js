@@ -1,4 +1,5 @@
 import { jobItem } from "./components/jobItem.js";
+import { tagItem } from "./components/tagItem.js";
 
 fetch("data.json")
   .then((res) => res.json())
@@ -9,31 +10,25 @@ fetch("data.json")
 
     const filterTags = new Set();
 
-    function toggleChosen(e) {
-      const result = e.target.classList.toggle("chosen");
+    function handleChoose(e) {
       const tagText = e.target.textContent;
-
-      if (result) {
-        filterTags.add(tagText);
-        tags.forEach((tag) => {
-          if (tagText === tag.textContent) {
-            tag.classList.add("chosen");
-          }
-        });
-      } else {
-        filterTags.delete(tagText);
-        tags.forEach((tag) => {
-          if (tagText === tag.textContent) {
-            tag.classList.remove("chosen");
-          }
-        });
+      if (!filterTags.size) {
+        list.insertAdjacentHTML("beforebegin", `<div class="filter"></div>`);
       }
-      console.log(filterTags);
+      filterTags.add(tagText);
+      updateFilterWith(Array.from(filterTags));
+    }
+
+    function updateFilterWith(list) {
+      const filter = document.querySelector(".filter");
+      const tags = Array.from(list).map((tag) => tagItem(tag));
+      const clearBtn = `<button class="clear-button">Clear</button>`;
+      filter.innerHTML = `<div>${tags.join("")}</div>${clearBtn}`;
     }
 
     const tags = document.querySelectorAll(".job-tags p");
     tags.forEach((tag) => {
-      tag.addEventListener("click", toggleChosen);
+      tag.addEventListener("click", handleChoose);
     });
   })
   .catch((err) => {

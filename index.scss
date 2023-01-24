@@ -22,9 +22,9 @@ body {
 
 ul {
   list-style: none;
+  position: relative;
   width: min(80%, 1000px);
-  margin: 0 auto;
-  padding: 2em 0;
+  margin: 4em auto;
 }
 
 header img {
@@ -55,12 +55,16 @@ section,
   display: flex;
 }
 
+li,
+.filter {
+  box-shadow: 0 0.5em 0.5em -0.2em $light-grayish-cyan-shadow;
+  border-radius: 0.25em;
+}
+
 li {
   align-items: center;
   background-color: $white;
-  margin-top: 1.5em;
-  box-shadow: 0 0.3em 0.5em 0.2em $light-grayish-cyan-shadow;
-  border-radius: 0.25em;
+  margin-bottom: 1.5em;
   border-left: 5px solid $white;
   padding: 1em 0;
   img {
@@ -120,22 +124,75 @@ li {
   }
 }
 
-.job-tags {
+.job-tags,
+.filter {
   display: flex;
-  align-items: center;
-  gap: 0.75em;
   p {
     color: $deep-dark-cyan;
     background-color: $light-grayish-cyan-bg;
     font-weight: $bold-weight;
     padding: 0.5em;
     border-radius: 0.25em;
+  }
+}
+
+.job-tags {
+  gap: 0.75em;
+  align-items: center;
+  p {
+    transition: 0s 0.1s;
     &:hover {
       cursor: pointer;
     }
+    &:active {
+      color: $white;
+      background-color: $deep-dark-cyan;
+      transition: 0s;
+    }
   }
-  .chosen {
+}
+
+.filter {
+  justify-content: space-between;
+  width: min(80%, 1000px);
+  margin: 0 auto;
+  padding: 1em 2em;
+  margin-bottom: -4em;
+  transform: translate(0, -50%);
+  background-color: $white;
+  & > div,
+  div {
+    display: flex;
+  }
+  & > div {
+    gap: 0.75em;
+  }
+  div > p {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .remove-button {
+    border: none;
+    border-top-right-radius: 0.15em;
+    border-bottom-right-radius: 0.15em;
+    font-size: 1.5em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
     color: $white;
-    background-color: $deep-dark-cyan;
+    background-color: $desaturated-dark-cyan;
+    &:hover {
+      cursor: pointer;
+      background-color: $very-dark-grayish-cyan;
+    }
+  }
+  .clear-button {
+    background-color: transparent;
+    border: none;
+    color: $deep-dark-cyan;
+    font-weight: $bold-weight;
+    &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+    }
   }
 }
