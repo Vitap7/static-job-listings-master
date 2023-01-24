@@ -61,6 +61,7 @@ li {
   margin-top: 1.5em;
   box-shadow: 0 0.3em 0.5em 0.2em $light-grayish-cyan-shadow;
   border-radius: 0.25em;
+  border-left: 5px solid $white;
   padding: 1em 0;
   img {
     padding-left: 1.5em;
@@ -75,6 +76,10 @@ li {
     gap: 0.75em;
     color: $dark-grayish-cyan;
     font-weight: $base-weight * 1.15;
+  }
+  &:hover {
+    transition: all ease-out 0.15s;
+    border-left: 5px solid $deep-dark-cyan;
   }
 }
 
@@ -108,6 +113,10 @@ li {
   h2 {
     font-size: 1.25em;
     padding: 0.75em 0;
+    &:hover {
+      cursor: pointer;
+      color: $desaturated-dark-cyan;
+    }
   }
 }
 
@@ -121,5 +130,12 @@ li {
     font-weight: $bold-weight;
     padding: 0.5em;
     border-radius: 0.25em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .chosen {
+    color: $white;
+    background-color: $deep-dark-cyan;
   }
 }
