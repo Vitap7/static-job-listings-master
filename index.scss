@@ -203,10 +203,11 @@ li {
   .clear-button {
     background-color: transparent;
     border: none;
-    color: $deep-dark-cyan;
+    color: $dark-grayish-cyan;
     font-weight: $bold-weight;
     &:hover {
       cursor: pointer;
+      color: $deep-dark-cyan;
       text-decoration: underline;
     }
   }

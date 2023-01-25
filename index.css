@@ -203,11 +203,12 @@ li:hover {
 .filter .clear-button {
   background-color: transparent;
   border: none;
-  color: hsl(180deg, 29%, 49%);
+  color: hsl(180deg, 8%, 52%);
   font-weight: 700;
 }
 .filter .clear-button:hover {
   cursor: pointer;
+  color: hsl(180deg, 29%, 49%);
   text-decoration: underline;
 }
 
