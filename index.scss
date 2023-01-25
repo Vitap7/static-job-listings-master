@@ -233,8 +233,8 @@ li {
   }
 }
 
-@media only screen and (min-width: $mobile-width) {
-  @media only screen and (max-width: $max-mobile-width) {
+@media only screen and (min-width: 0) {
+  @media only screen and (max-width: $middle-desktop-width) {
     body {
       font-size: $base-font-size * 0.9;
     }
