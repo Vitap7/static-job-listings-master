@@ -3,6 +3,11 @@
 }
 
 html,
+body {
+  height: 100%;
+}
+
+html,
 body,
 ul,
 h2,
@@ -13,16 +18,26 @@ p {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   font-size: 15px;
   font-family: "League Spartan";
   background-color: hsl(180deg, 52%, 96%);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
   list-style: none;
   position: relative;
   width: min(80%, 1000px);
-  margin: 4em auto;
+  margin: 0 auto;
+  padding-top: 4em;
+  padding-bottom: 2.5em;
 }
 
 header img {
@@ -199,6 +214,7 @@ li:hover {
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin-top: auto;
 }
 
 .attribution a {
