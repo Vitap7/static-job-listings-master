@@ -46,6 +46,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [my solution](https://www.frontendmentor.io/solutions/job-listings-with-filtering-jG2sMVN7cW)
+
 - Live Site URL: [static-job-listings](https://static-job-listings-master-roan.vercel.app/)
 
 ## My process
