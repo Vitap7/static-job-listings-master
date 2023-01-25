@@ -94,12 +94,25 @@ li .detail-info {
   gap: 0.75em;
   color: hsl(180deg, 8%, 52%);
   font-weight: 575;
+  white-space: nowrap;
 }
 li:hover {
   transition: all ease-out 0.15s;
   border-left: 5px solid hsl(180deg, 29%, 49%);
 }
 
+@media only screen and (min-width: 480px) and (max-width: 980px) {
+  section {
+    padding-right: 0.5em;
+  }
+  li .detail-info {
+    gap: 0.5em;
+  }
+  li img {
+    padding-left: 0.5em;
+    width: 6em;
+  }
+}
 .middle-info {
   flex-direction: column;
   font-weight: 700;
@@ -147,11 +160,13 @@ li:hover {
   background-color: hsl(180deg, 52%, 96%);
   font-weight: 700;
   padding: 0.5em;
+  margin-left: 0.75em;
   border-radius: 0.25em;
 }
 
 .job-tags {
-  gap: 0.75em;
+  flex-wrap: wrap;
+  justify-content: end;
   align-items: center;
 }
 .job-tags p {

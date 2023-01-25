@@ -95,10 +95,28 @@ li {
     gap: 0.75em;
     color: $dark-grayish-cyan;
     font-weight: $base-weight * 1.15;
+    white-space: nowrap;
   }
   &:hover {
     transition: all ease-out 0.15s;
     border-left: 5px solid $deep-dark-cyan;
+  }
+}
+
+@media only screen and (min-width: $max-mobile-width) {
+  @media only screen and (max-width: 980px) {
+    section {
+      padding-right: 0.5em;
+    }
+    li {
+      .detail-info {
+        gap: 0.5em;
+      }
+      img {
+        padding-left: 0.5em;
+        width: 6em;
+      }
+    }
   }
 }
 
@@ -147,12 +165,14 @@ li {
     background-color: $light-grayish-cyan-bg;
     font-weight: $bold-weight;
     padding: 0.5em;
+    margin-left: 0.75em;
     border-radius: 0.25em;
   }
 }
 
 .job-tags {
-  gap: 0.75em;
+  flex-wrap: wrap;
+  justify-content: end;
   align-items: center;
   p {
     transition: 0s 0.1s;
