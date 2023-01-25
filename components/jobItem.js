@@ -4,6 +4,7 @@ export function jobItem(_) {
 
   const img = document.createElement("img");
   img.src = _.logo;
+  img.alt = `${_.company} icon`;
 
   const jobTagsParent = document.createElement("div");
   const jobTags = [_.role, _.level, ..._.languages.concat(_.tools)].map((i) => {
