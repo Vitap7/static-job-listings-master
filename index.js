@@ -9,11 +9,12 @@ fetch("data.json")
     const jobs = data.map((_) => jobItem(_));
 
     const list = document.querySelector(".job-list");
-    list.innerHTML = jobs.join("");
+    list.append(...jobs);
 
     function updateFilterWith(filterTags) {
       if (!filterTags.length) {
         document.querySelector(".filter").remove();
+        updateJobsList();
         return;
       }
       generateFilterItems(filterTags);
@@ -21,17 +22,18 @@ fetch("data.json")
     }
 
     function updateJobsList() {
-      document.querySelector(".job-list").innerHTML = data
-        .filter((job) => {
-          const tags = [
-            job.role,
-            job.level,
-            ...job.languages.concat(job.tools),
-          ];
-          return Array.from(filterTags).every((item) => tags.includes(item));
-        })
-        .map((_) => jobItem(_))
-        .join("");
+      list.replaceChildren(
+        ...data
+          .filter((job) => {
+            const tags = [
+              job.role,
+              job.level,
+              ...job.languages.concat(job.tools),
+            ];
+            return Array.from(filterTags).every((item) => tags.includes(item));
+          })
+          .map((_) => jobItem(_))
+      );
 
       document.querySelectorAll(".job-tags p").forEach((tag) => {
         tag.addEventListener("click", handleChoose);
